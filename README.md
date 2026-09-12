@@ -46,9 +46,45 @@ AquaWise AI combines deterministic chemical risk assessment with **IBM Granite L
                    │
                    └──► 3. IBM Granite LLM (modules/llm_advisor.py)
                            └─► Generates Contextual Actionable Advisory
+```
+---
 
 ## 🛠️ Technology Stack
 * **Frontend:** Streamlit (Python)
 * **LLM Engine:** IBM Granite 3.0 (via Hugging Face Inference API / Local Fallback Logic)
 * **Vector Store & Embeddings:** FAISS + `sentence-transformers/all-MiniLM-L6-v2`
 * **Data & Logic:** Python 3.10+, Pandas, LangChain
+
+
+  ---
+
+
+  ## 📁 Repository Folder Structure
+
+* **`.streamlit/`**: Streamlit configuration files (e.g., `secrets.toml` for storing API keys).
+* **`modules/`**: Core backend logic and processing files:
+  * **`evaluator.py`**: Rule-based logic for Water Quality Index (WQI) score calculation.
+  * **`rag_engine.py`**: FAISS vector store and CPCB water policy context retrieval module.
+  * **`llm_advisor.py`**: Prompt engine and IBM Granite LLM integration handler.
+* **`app.py`**: Main application script running the Streamlit web dashboard.
+* **`requirements.txt`**: List of Python library dependencies for project setup and cloud deployment.
+* **`README.md`**: Project documentation, setup guide, and evaluation overview.
+
+
+----
+## ⚖️ Responsible AI Considerations
+
+* **Fairness & Accessibility:** Designed to translate complex physical and chemical water quality data into plain, accessible language without technical jargon, making it usable for non-technical community members and rural farmers.
+* **Transparency & Explainability:** Employs a clear hybrid approach:
+  * Deterministic rule-based evaluation to provide transparent, standardized safety scores.
+  * Retrieved CPCB policy fragments shown explicitly to users alongside AI-generated advisories.
+* **Ethics & Safety First:** Includes explicit disclaimers emphasizing that the system provides decision-support guidance and does not replace certified laboratory testing or official government health notices.
+* **Privacy & Data Protection:** Designed with privacy by default—processes water sample metrics statelessly without collecting or storing personally identifiable information (PII) or user location data.
+* **Human Oversight (Human-in-the-Loop):** Empowers municipal field officers and community leaders with AI insights while keeping critical water management decisions strictly under human authority.
+* **AI Limitations Disclosed:** Clearly communicates system boundary limits, including reliance on user-input accuracy and potential generic output in borderline scenarios.
+
+
+---
+## 📄 License
+
+Developed for educational, research, and community impact purposes as part of the **1M1B – IBM SkillsBuild AI + Sustainability Virtual Internship (July–September 2026)** in collaboration with AICTE.
