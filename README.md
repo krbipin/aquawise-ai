@@ -47,3 +47,8 @@ AquaWise AI combines deterministic chemical risk assessment with **IBM Granite L
                    └──► 3. IBM Granite LLM (modules/llm_advisor.py)
                            └─► Generates Contextual Actionable Advisory
 
+## 🛠️ Technology Stack
+* **Frontend:** Streamlit (Python)
+* **LLM Engine:** IBM Granite 3.0 (via Hugging Face Inference API / Local Fallback Logic)
+* **Vector Store & Embeddings:** FAISS + `sentence-transformers/all-MiniLM-L6-v2`
+* **Data & Logic:** Python 3.10+, Pandas, LangChain
